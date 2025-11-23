@@ -12,6 +12,7 @@
     "db:studio": "bunx drizzle-kit studio",
     "db:generate": "bunx drizzle-kit generate",
     "db:seed": "bun run src/lib/db/seed.ts",
+    "db:seed-demo": "bun run src/lib/db/seed-demo.ts",
     "test": "playwright test",
     "test:ui": "playwright test --ui",
     "test:headed": "playwright test --headed",

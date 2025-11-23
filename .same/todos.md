@@ -1,3 +1,218 @@
+# 📋 Próximos Pasos - ¿Qué Quieres Hacer?
+
+**Fecha:** Noviembre 23, 2025
+**Estado:** 98% Completo ✅
+
+---
+
+## 🌱 AHORA: Poblando Base de Datos con Datos Demo
+
+### Paso 1: Crear Tablas en la Base de Datos ✅
+```bash
+bun run db:push
+```
+
+### Paso 2: Crear Datos Básicos (Planes, Roles, Empresa Demo)
+```bash
+bun run db:seed
+```
+**Crea:**
+- 3 Planes de suscripción (Básico, Profesional, Empresarial)
+- 1 Empresa Demo
+- 6 Roles predefinidos (Super Admin, Admin, Gerente, Vendedor, Cajero, Almacenista)
+- Permisos por rol
+- 1 Usuario administrador (admin@demo.com / demo123)
+
+### Paso 3: Crear Datos de Ejemplo para Demostración
+```bash
+bun run db:seed-demo
+```
+**Crea:**
+- 3 Sucursales (Centro, Norte, Sur)
+- 6 Categorías de productos
+- 12 Productos de ejemplo (laptops, accesorios, audio, etc.)
+- Inventario en las 3 sucursales
+- 6 Clientes (3 físicas, 3 morales)
+- 3 Proveedores
+- 7 Cajas distribuidas en sucursales
+- ~80-100 Ventas de los últimos 30 días con detalles
+
+**Total de registros:** ~300+ registros de ejemplo listos para presentación
+
+---
+
+## 🎯 OPCIONES DISPONIBLES HOY
+
+### 1️⃣ **Iniciar el Sistema y Probarlo** (Más Rápido - 5 min)
+```bash
+cd erp-marca-blanca
+bun run dev
+```
+✅ Todo funciona con credenciales de sandbox
+✅ Facturación CFDI 4.0 operativa
+✅ Pagos con Stripe (modo test)
+✅ PWA instalable
+✅ Dark mode
+
+---
+
+### 2️⃣ **Completar Funciones Móviles** (Sprint 27-28)
+⏱️ Tiempo: ~4-6 horas
+💪 Puedo hacerlo yo completamente
+
+- [ ] Optimizar PDV móvil táctil
+- [ ] Mejorar scanner de códigos de barras
+- [ ] Consulta rápida de inventario
+- [ ] Registro de entradas/salidas móvil
+- [ ] Transferencias entre sucursales
+- [ ] Captura de fotos de productos
+- [ ] Toma de pedidos móvil
+- [ ] Gestos táctiles optimizados
+- [ ] Layout responsive mejorado
+
+**Beneficio:** Experiencia móvil profesional para usuarios en el piso de venta
+
+---
+
+### 3️⃣ **Completar Dark Mode** (UX Polish)
+⏱️ Tiempo: ~2-3 horas
+💪 Puedo hacerlo yo completamente
+
+- [ ] Dark mode en todas las páginas pendientes
+- [ ] Animaciones suaves adicionales
+- [ ] Skeleton loaders en más componentes
+- [ ] Accesibilidad WCAG 2.1 básica
+- [ ] Optimizar transiciones
+
+**Beneficio:** Interface profesional y accesible en modo oscuro completo
+
+---
+
+### 4️⃣ **Implementar Tests Automatizados** (Sprint 34)
+⏱️ Tiempo: ~3-4 horas
+💪 Puedo hacerlo yo completamente
+
+- [ ] Configurar Playwright (ya instalado)
+- [ ] Tests E2E: Login y autenticación
+- [ ] Tests E2E: Punto de Venta (PDV)
+- [ ] Tests E2E: Facturación CFDI
+- [ ] Tests E2E: Inventario
+- [ ] Tests de integración API
+- [ ] CI/CD con GitHub Actions (ya configurado)
+- [ ] Cobertura de código 60%+
+
+**Beneficio:** Confianza al hacer cambios, prevención de bugs
+
+---
+
+### 5️⃣ **Optimización de Performance** (Sprint 34)
+⏱️ Tiempo: ~2-3 horas
+💪 Puedo hacerlo yo completamente
+
+- [ ] Optimizar queries de base de datos
+- [ ] Agregar índices faltantes
+- [ ] React.memo en componentes pesados
+- [ ] Code splitting adicional
+- [ ] Lazy loading de imágenes
+- [ ] Lighthouse audit y mejoras
+- [ ] Bundle size optimization
+
+**Beneficio:** Sistema más rápido y eficiente
+
+---
+
+### 6️⃣ **Preparar para Producción** (Sprint 35)
+⏱️ Tiempo: Depende de ti (setup) + 2h (yo)
+🤝 Trabajo conjunto
+
+**TÚ necesitas hacer (30-40 min):**
+- [ ] Crear cuenta Neon Database → Obtener DATABASE_URL
+- [ ] Crear repositorio GitHub privado
+- [ ] Crear cuenta Netlify/Vercel
+- [ ] Configurar variables de entorno
+
+**YO puedo hacer después:**
+- [ ] Ejecutar migraciones en producción
+- [ ] Deploy inicial a staging
+- [ ] Configurar CI/CD
+- [ ] Monitoreo y logs
+- [ ] Backups automatizados
+
+**Beneficio:** Sistema en la nube, accesible desde cualquier lugar
+
+---
+
+### 7️⃣ **Crear Documentación y Tutoriales**
+⏱️ Tiempo: ~6-8 horas (mixto)
+🤝 Trabajo conjunto
+
+**YO puedo hacer:**
+- [ ] Documentación técnica de APIs
+- [ ] Guías de instalación
+- [ ] Documentación de código
+- [ ] FAQs técnicas
+
+**TÚ necesitas hacer:**
+- [ ] Videos tutoriales de uso
+- [ ] Base de conocimientos para usuarios
+- [ ] Guías de usuario final
+- [ ] Material de marketing
+
+**Beneficio:** Usuarios autónomos, menos soporte necesario
+
+---
+
+### 8️⃣ **Configurar Servicios Externos para Producción**
+⏱️ Tiempo: ~2-3 horas (tú)
+👤 Solo tú puedes hacer esto
+
+- [ ] Crear cuenta Stripe real
+- [ ] Configurar planes de suscripción en Stripe
+- [ ] Crear cuenta Facturama producción
+- [ ] Subir certificados SAT reales
+- [ ] Configurar SMTP para emails
+- [ ] Configurar storage de imágenes (Cloudinary/S3)
+- [ ] Comprar dominio personalizado
+- [ ] Configurar DNS
+
+**Beneficio:** Facturación real, cobros reales, emails reales
+
+---
+
+## 🎨 RECOMENDACIÓN DEL ASISTENTE
+
+### Si quieres ver resultados HOY:
+**Opción 1** → Iniciar y probar (5 min)
+Luego **Opción 2** → Funciones Móviles (4-6h)
+
+### Si quieres preparar producción:
+**Opción 6** → Setup básico (tú 40 min, yo 2h)
+Luego **Opción 8** → Servicios externos (tú 2-3h)
+
+### Si quieres pulir el sistema:
+**Opción 3** → Dark mode completo (2-3h)
+**Opción 4** → Tests automatizados (3-4h)
+**Opción 5** → Performance (2-3h)
+
+---
+
+## ❓ ¿Qué Prefieres?
+
+**Dime qué opción quieres y empiezo de inmediato:**
+
+1. "Iniciar el sistema" → Te ayudo a correrlo
+2. "Funciones móviles" → Las implemento completas
+3. "Dark mode" → Lo completo en todas las páginas
+4. "Tests" → Implemento suite completa E2E
+5. "Performance" → Optimizo todo
+6. "Producción" → Te guío en el setup
+7. "Documentación" → Creo docs técnicas
+8. "Servicios externos" → Te explico el proceso
+
+---
+
+**O dime algo específico que quieras agregar/mejorar** 🚀
+
 # 📋 Todos - Sprints 16-35
 
 ## ✅ COMPLETADOS (Sprints 16-24)
