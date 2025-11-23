@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sin conexión - ERP Marca Blanca</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      padding: 60px 40px;
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    h1 {
+      color: #1e293b;
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: #64748b;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .button:active {
+      transform: translateY(0);
+    }
+
+    .info {
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .info-item {
+      color: #64748b;
+      font-size: 14px;
+      margin: 8px 0;
+    }
+
+    .loader {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #f3f4f6;
+      border-top-color: #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 40px 24px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .icon {
+        font-size: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">📡</div>
+    <h1>Sin Conexión a Internet</h1>
+    <p>
+      No se puede conectar al servidor en este momento.
+      Por favor, verifica tu conexión a internet e intenta nuevamente.
+    </p>
+    <button class="button" onclick="location.reload()">
+      Reintentar
+      <span class="loader" style="display: none;" id="loader"></span>
+    </button>
+
+    <div class="info">
+      <div class="info-item">ERP Marca Blanca</div>
+      <div class="info-item">Sistema Multi-Tenant</div>
+      <div class="info-item" id="status">Estado: Sin conexión</div>
+    </div>
+  </div>
+
+  <script>
+    // Auto-retry connection
+    let retryCount = 0;
+    const maxRetries = 3;
+
+    function checkConnection() {
+      if (navigator.onLine) {
+        document.getElementById('status').textContent = 'Estado: Conectado';
+        document.getElementById('status').style.color = '#10b981';
+        setTimeout(() => {
+          location.reload();
+        }, 1000);
+      } else {
+        document.getElementById('status').textContent = 'Estado: Sin conexión';
+        document.getElementById('status').style.color = '#ef4444';
+      }
+    }
+
+    // Check connection every 5 seconds
+    setInterval(checkConnection, 5000);
+
+    // Listen for online event
+    window.addEventListener('online', () => {
+      document.getElementById('status').textContent = 'Estado: Reconectando...';
+      document.getElementById('loader').style.display = 'inline-block';
+      setTimeout(() => {
+        location.reload();
+      }, 1000);
+    });
+
+    // Button click handler
+    document.querySelector('.button').addEventListener('click', function() {
+      this.disabled = true;
+      document.getElementById('loader').style.display = 'inline-block';
+      setTimeout(() => {
+        this.disabled = false;
+        document.getElementById('loader').style.display = 'none';
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
